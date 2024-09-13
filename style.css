@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("image/fond.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    height: 600px; /* Ajustez la hauteur selon vos besoins */
+    animation: breathe 4s ease-in-out infinite;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajout d'une marge pour séparer le logo des boutons */
+}
+
+@keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.menu-button {
+    background: #D53506;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 16px;
+}
+
+.content-container {
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    margin: 20px;
+    padding: 16px 32px;
+    font-size: 32px;
+    padding: 20px;
+    text-align: center; /* Ajout d'une alignement central pour le contenu */
+}
+
+.content.hidden {
+    display: none;
+}
+
+.content {
+    position: relative;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3); /* Couleur blanche transparente */
+    z-index: -1; /* Pour placer le carré en arrière-plan du texte */
+    pointer-events: none; /* Permet aux clics de passer à travers le carré vers le texte */
+}
+
+
+.logo.looping {
+    animation: rotate 2s linear infinite; /* Modifiez la durée et le type d'animation selon vos préférences */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
